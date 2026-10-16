@@ -71,9 +71,8 @@ main::after {
 .brand { display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .045em; font-weight: 600; }
 .brand-mark { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(133,79,89,.35); color: var(--rose-deep); }
 .site-header nav { display: flex; gap: 38px; }
-.site-header nav a, .header-note { font-size: 13px; color: #626357; letter-spacing: .025em; transition: color .25s ease; }
-.site-header nav a:hover, .header-note:hover { color: var(--rose-deep); }
-.header-note { display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(133,79,89,.4); padding-bottom: 5px; color: var(--rose-deep); }
+.site-header nav a { font-size: 13px; color: #626357; letter-spacing: .025em; transition: color .25s ease; }
+.site-header nav a:hover { color: var(--rose-deep); }
 
 .hero { min-height: min(810px, calc(100svh - 82px)); min-height: 700px; position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 70px 8.5vw 98px 10.4vw; gap: 4.5vw; }
 .hero-copy { padding-top: 8px; position: relative; z-index: 2; max-width: 550px; }
@@ -145,22 +144,6 @@ main::after {
 .text-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 27px; padding-bottom: 7px; border-bottom: 1px solid rgba(133,79,89,.55); font-size: 11px; color: var(--rose-deep); transition: gap .25s ease; }
 .text-link:hover { gap: 15px; }
 
-.letter-section { padding-top: 5px; padding-bottom: 118px; position: relative; }
-.letter-card { position: relative; overflow: hidden; padding: 32px clamp(25px, 5vw, 72px) 60px; background: rgba(255, 250, 244, .66); border: 1px solid rgba(133,79,89,.2); box-shadow: 0 22px 65px rgba(102, 71, 61, .07); }
-.letter-card::before { content: ""; position: absolute; width: 320px; height: 320px; right: -100px; bottom: -150px; border-radius: 50%; background: radial-gradient(circle, rgba(201,209,188,.56), transparent 68%); }
-.letter-decoration { position: absolute; top: 28px; right: 34px; color: var(--rose); opacity: .75; }
-.letter-meta { display: flex; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--line); color: #8b887c; font: 9px var(--mono); letter-spacing: .15em; }
-.letter-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(300px, 1fr); gap: 12%; padding-top: 52px; }
-.letter-card h2 { margin: 0; font: 400 clamp(43px, 5.2vw, 72px)/1.02 var(--serif); letter-spacing: -.06em; }
-.letter-card h2 em { color: var(--rose-deep); font-weight: 400; }
-.letter-intro { max-width: 350px; margin: 25px 0 0; color: #777669; font-size: 15px; line-height: 1.85; }
-.note-toggle { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; padding: 0 0 8px; border: 0; border-bottom: 1px solid rgba(133,79,89,.55); color: var(--rose-deep); background: transparent; font: 13px var(--sans); cursor: pointer; transition: gap .25s ease; }
-.note-toggle:hover { gap: 15px; }
-.letter-body { align-self: center; min-height: 190px; padding: 30px 30px 25px; border-left: 2px solid rgba(189,119,126,.35); color: #646459; background: rgba(246,241,233,.58); }
-.letter-body > p:first-child { margin: 0; color: var(--ink); font: italic 400 clamp(21px, 2.2vw, 30px)/1.45 var(--serif); }
-.letter-body.is-open { min-height: 250px; }
-.letter-body.is-open > div > p { margin: 23px 0 17px; font-size: 14px; line-height: 1.85; }
-.letter-signoff { color: var(--rose-deep); font: italic 15px var(--serif); }
 
 .lily-section { background: linear-gradient(160deg, #eee7de 0%, #f2e8e2 48%, #e6ebdf 100%); padding: 76px 0 123px; border-top: 1px solid rgba(58,55,46,.1); position: relative; }
 .lily-section::before {
@@ -235,7 +218,6 @@ main::after {
   .brand { font-size: 11px; }
   .site-header nav { gap: 17px; }
   .site-header nav a { font-size: 10px; }
-  .header-note { display: none; }
   .hero { min-height: auto; padding: 74px 25px 78px; grid-template-columns: 1fr; gap: 48px; }
   .hero-copy { max-width: 600px; }
   .eyebrow { margin-bottom: 23px; font-size: 8px; }
@@ -258,15 +240,6 @@ main::after {
   .bouquet-copy { padding-left: 3px; }
   .bouquet-copy h2 { font-size: clamp(45px, 11vw, 68px); }
   .bouquet-lead { font-size: 12px; }
-  .letter-section { padding-top: 0; padding-bottom: 78px; }
-  .letter-card { padding: 24px 20px 34px; }
-  .letter-decoration { top: 23px; right: 21px; }
-  .letter-meta { font-size: 7px; padding-right: 32px; }
-  .letter-layout { display: block; padding-top: 36px; }
-  .letter-card h2 { font-size: clamp(43px, 11vw, 68px); }
-  .letter-intro { font-size: 13px; }
-  .letter-body { margin-top: 40px; min-height: 0; padding: 24px 20px 20px; }
-  .letter-body.is-open { min-height: 0; }
   .promise-strip { padding-top: 48px; padding-bottom: 54px; }
   .promise-grid { grid-template-columns: 1fr; gap: 9px; margin-top: 20px; }
   .promise-grid p { font-size: 13px; }
