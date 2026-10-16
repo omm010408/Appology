@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowDown,
@@ -8,6 +9,7 @@ import {
   Flower2,
   Heart,
   Leaf,
+  Quote,
   Sparkles,
 } from "lucide-react";
 
@@ -204,6 +206,8 @@ function Reveal({
 
 export default function Home() {
   const reduceMotion = useReducedMotion();
+  const [isNoteOpen, setIsNoteOpen] = useState(false);
+  const bouquetStems = useMemo(() => Array.from({ length: 7 }, (_, i) => i), []);
 
   return (
     <main>
@@ -216,7 +220,9 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#bouquet">The bouquet</a>
+          <a href="#note">The note</a>
         </nav>
+        <a className="header-note" href="#note">A quiet note <ArrowUpRight size={14} /></a>
       </header>
 
       <section className="hero" id="home">
@@ -228,7 +234,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.12 }}
           >
             <span className="eyebrow-line" />
-            A GESTURE, GATHERED WITH CARE
+            A NOTE, GATHERED WITH CARE
           </motion.div>
           <motion.h1
             initial={reduceMotion ? false : { opacity: 0, y: 32 }}
@@ -257,7 +263,7 @@ export default function Home() {
             <span className="scroll-icon"><ArrowDown size={16} strokeWidth={1.5} /></span>
             <span>Read what each bloom means</span>
           </motion.a>
-          <div className="hero-index" aria-hidden="true"><span>01</span> / 02</div>
+          <div className="hero-index" aria-hidden="true"><span>01</span> / 03</div>
         </div>
 
         <motion.div
@@ -311,8 +317,37 @@ export default function Home() {
               <div><span className="meaning-number">02</span><div><strong>I own my part</strong><p>No explanations dressed up as excuses.</p></div></div>
               <div><span className="meaning-number">03</span><div><strong>I will do better</strong><p>With patience and changed actions.</p></div></div>
             </div>
+            <a className="text-link" href="#note">Read the note <ArrowUpRight size={15} /></a>
           </Reveal>
         </div>
+      </section>
+
+      <section className="letter-section section-shell" id="note">
+        <Reveal className="letter-card">
+          <div className="letter-decoration" aria-hidden="true"><Quote size={25} strokeWidth={1.1} /></div>
+          <div className="letter-meta"><span>04 — A SMALL NOTE</span><span>NO RESPONSE NEEDED</span></div>
+          <div className="letter-layout">
+            <div>
+              <h2>The part I want<br /><em>you to know.</em></h2>
+              <p className="letter-intro">
+                An apology is not a request for you to feel better quickly.
+                It is a promise to be honest about the impact of my choices.
+              </p>
+              <button className="note-toggle" type="button" onClick={() => setIsNoteOpen((open) => !open)} aria-expanded={isNoteOpen}>
+                {isNoteOpen ? "Close the note" : "Open the note"} <ArrowUpRight size={15} />
+              </button>
+            </div>
+            <div className={`letter-body${isNoteOpen ? " is-open" : ""}`}>
+              <p>“I am sorry. Not just for the moment itself, but for the way I made you carry the weight of it.”</p>
+              {isNoteOpen && (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+                  <p>I care about you more than I showed. You do not owe me an immediate answer, reassurance, or forgiveness. I only wanted to place something sincere in front of you, and leave the rest in your hands.</p>
+                  <span className="letter-signoff">With care, always My Cute Lilu.</span>
+                </motion.div>
+              )}
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="promise-strip section-shell" aria-label="A promise for moving forward">
