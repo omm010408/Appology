@@ -341,7 +341,7 @@ export default function Home() {
               <p>“I am sorry. Not just for the moment itself, but for the way I made you carry the weight of it.”</p>
               {isNoteOpen && (
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-                  <p>I care about you more than I showed. You do not owe me an immediate answer, reassurance, or forgiveness. I only wanted to place something sincere in front of you, and leave the rest in your hands.</p>
+                  <p>I care about you more than I showed. You do not owe me an immediate answer, reassurance, or forgiveness. Sorry I couldn&apos;t give a real boqueut but I am able tu give you this. Sorry Cutie</p>
                   <span className="letter-signoff">With care, always My Cute Lilu.</span>
                 </motion.div>
               )}
